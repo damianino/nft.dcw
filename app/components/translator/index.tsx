@@ -15,6 +15,22 @@ const Translator = () => {
 
     const [needTranslation, setNeedTranslation] = useState(false)
 
+    const humanTextArea = (
+        <TranslatorTextAreaHuman 
+                value={humanVal}
+                disabled={!translate2Tot}
+                onChange={(e)=>{setHumanVal(e.target.value); translate2Tot && setNeedTranslation(true) }}
+            />
+    )
+
+    const totTextArea = (
+        <TranslatorTextAreaTot
+                value={totVal}
+                disabled={translate2Tot}
+                onChange={(e)=>{setTotVal(e.target.value); !translate2Tot && setNeedTranslation(true)}}
+            />
+    )
+
     const transClient = new TranslatorClient(TranslatorAPIURL)
 
     useEffect(() => {
@@ -39,34 +55,17 @@ const Translator = () => {
         return
     }
 
+    
+
     return (
         <Container>
-            {translate2Tot? 
-            <TranslatorTextAreaHuman 
-                value={humanVal}
-                disabled={!translate2Tot}
-                onChange={(e)=>{setHumanVal(e.target.value); translate2Tot && setNeedTranslation(true) }}
-            />:
-            <TranslatorTextAreaTot
-                value={totVal}
-                disabled={translate2Tot}
-                onChange={(e)=>{setTotVal(e.target.value); !translate2Tot && setNeedTranslation(true)}}
-            />}
+            {translate2Tot? humanTextArea : totTextArea}
             
             <SwitchLanguageButton onClick={()=>setTranslate2Tot(!translate2Tot)}>
                 <img src="/translator/switch.png" style={{}} alt="" />
             </SwitchLanguageButton>
-            {!translate2Tot? 
-            <TranslatorTextAreaHuman 
-                value={humanVal}
-                disabled={!translate2Tot}
-                onChange={(e)=>{setHumanVal(e.target.value); translate2Tot && setNeedTranslation(true) }}
-            />:
-            <TranslatorTextAreaTot
-                value={totVal}
-                disabled={translate2Tot}
-                onChange={(e)=>{setTotVal(e.target.value); !translate2Tot && setNeedTranslation(true)}}
-            />}
+
+            {!translate2Tot? humanTextArea : totTextArea}
         </Container>
     )
 }
