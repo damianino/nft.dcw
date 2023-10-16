@@ -1,0 +1,9 @@
+.copy-button-ok-start{
+    transform: scale(.5);
+    background-color: red;
+}
+
+.copy-button-ok-end{
+    transform: scale(1);
+    background-color: blue;
+}
