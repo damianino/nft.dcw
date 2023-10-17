@@ -1,8 +1,8 @@
 import { Dispatch, FunctionComponent, SetStateAction, useEffect, useMemo, useRef, useState } from "react";
 import { BG, TranslatorBox } from "../styled";
 import { CopyButton, TextArea } from "./styled";
-import "@/app/styles/components/translator/translatorTextArea/index.css"
-import Props from "@/app/types/components/translator/translatorTextArea";
+import "@/src/styles/components/translator/translatorTextArea/index.css"
+import Props from "@/src/types/components/translator/translatorTextArea";
 
 const copyValueClipboard = (value: string) => {
     navigator.clipboard.writeText(value)

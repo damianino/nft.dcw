@@ -1,9 +1,7 @@
 import { Metadata } from 'next'
-import './styles/global.css'
+import '@/src/styles/global.css'
 
 export default function RootLayout({
-    // Layouts must accept a children prop.
-    // This will be populated with nested layouts or pages
     children,
   }: {
     children: React.ReactNode
@@ -14,6 +12,11 @@ export default function RootLayout({
         <link
           rel="preload"
           href="/loader.png"
+          as="image"
+        />
+        <link
+          rel="preload"
+          href="/translator/done.png"
           as="image"
         />
         <link

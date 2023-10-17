@@ -16,9 +16,6 @@ export const Container = styled.div`
     overflow: overlay;
     align-items: center;
     
-    /* min-height: -webkit-fill-available;
-    -webkit-margin-bottom-collapse: 10%; */
-
     @media (min-width: 780px){
         grid-template-columns: 5fr 1fr 5fr;
     }  

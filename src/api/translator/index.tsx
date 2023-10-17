@@ -1,4 +1,4 @@
-import { Human2TotDir, Tot2HumanDir } from "@/app/constants/translator";
+import { Human2TotDir, Tot2HumanDir } from "@/src/constants/translator";
 import axios from "axios";
 
 class TranslatorClient {

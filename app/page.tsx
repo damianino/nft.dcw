@@ -1,10 +1,8 @@
 "use client"
 
-
 import { useEffect, useRef } from "react";
-import Translator from "./components/translator";
-import { useOnLoadImages } from "./hooks/useOnLoadImages";
-import Loader from "./components/loader";
+import Translator from "@/src/components/translator";
+import { useOnLoadImages } from "@/src/hooks/useOnLoadImages";
 
 const Page = () => {
     const loaded = useOnLoadImages()

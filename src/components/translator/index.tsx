@@ -1,12 +1,10 @@
 "use client"
 
-import TranslatorClient from "@/app/api/translator";
+import TranslatorClient from "@/src/api/translator";
 import {TranslatorTextAreaHuman, TranslatorTextAreaTot} from "./translatorTextArea";
 import { Container, SwitchLanguageButton } from "./styled";
-import { TranslatorAPIURL } from "@/app/constants/translator";
-import TextareaTranslatorProps from "@/app/types/components/translator/translatorTextArea";
-import { ChangeEvent, use, useEffect, useMemo, useState } from "react";
-import { time } from "console";
+import { TranslatorAPIURL } from "@/src/constants/translator";
+import { useEffect, useState } from "react";
 
 const Translator = () => {
     const [humanVal, setHumanVal]  = useState("")
@@ -14,22 +12,6 @@ const Translator = () => {
     const [translate2Tot, setTranslate2Tot] = useState(true) 
 
     const [needTranslation, setNeedTranslation] = useState(false)
-
-    const humanTextArea = (
-        <TranslatorTextAreaHuman 
-                value={humanVal}
-                disabled={!translate2Tot}
-                onChange={(e)=>{setHumanVal(e.target.value); translate2Tot && setNeedTranslation(true) }}
-            />
-    )
-
-    const totTextArea = (
-        <TranslatorTextAreaTot
-                value={totVal}
-                disabled={translate2Tot}
-                onChange={(e)=>{setTotVal(e.target.value); !translate2Tot && setNeedTranslation(true)}}
-            />
-    )
 
     const transClient = new TranslatorClient(TranslatorAPIURL)
 
@@ -55,7 +37,21 @@ const Translator = () => {
         return
     }
 
-    
+    const humanTextArea = (
+        <TranslatorTextAreaHuman 
+                value={humanVal}
+                disabled={!translate2Tot}
+                onChange={(e)=>{setHumanVal(e.target.value); translate2Tot && setNeedTranslation(true) }}
+            />
+    )
+
+    const totTextArea = (
+        <TranslatorTextAreaTot
+                value={totVal}
+                disabled={translate2Tot}
+                onChange={(e)=>{setTotVal(e.target.value); !translate2Tot && setNeedTranslation(true)}}
+            />
+    )
 
     return (
         <Container>
@@ -65,7 +61,7 @@ const Translator = () => {
                 <img src="/translator/switch.png" style={{}} alt="" />
             </SwitchLanguageButton>
 
-            {!translate2Tot? humanTextArea : totTextArea}
+            {translate2Tot? totTextArea : humanTextArea}
         </Container>
     )
 }
