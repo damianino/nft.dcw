@@ -1,0 +1,1 @@
+export const APIURL = "https://d5doq9nt8g1u1lfvn6gf.apigw.yandexcloud.net/contract"

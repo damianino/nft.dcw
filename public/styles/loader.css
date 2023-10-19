@@ -39,3 +39,70 @@
     overflow: hidden;
     background-color: white;
 }
+
+.shelby-lightning-animation {
+    animation-name: lightning;
+    animation-duration: 3000ms;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+}
+
+@keyframes logo-fadeout {
+    0% {
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes lightning {
+    0% {
+        background-color: black;
+    }
+    5%{
+        background-color: white;
+    }
+    10% {
+        background-color: black;
+    }
+    45% {
+        background-color: black;
+    }
+    50%{
+        background-color: white;
+    }
+    55% {
+        background-color: black;
+    }
+    60%{
+        background-color: white;
+    }
+    65% {
+        background-color: black;
+    }
+    75% {
+        background-color: black;
+    }
+    80%{
+        background-color: white;
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.shelby-loader-bg{
+    z-index: 1111111;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    background-color: black;
+}
