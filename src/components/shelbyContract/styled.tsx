@@ -27,8 +27,6 @@ export const TextBox = styled.div<{isMobile: boolean}>`
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
 
     font-family: "Neue Machina";
     color: #686868;

@@ -37,8 +37,8 @@ export default function RootLayout({
   }
  
 export const metadata: Metadata = {
-  title: 'DCW.NFT - TotTranslator',
-  description: 'Welcome to Totverse',
+  title: 's̵̛̱͚͠ḫ̴̤͙̈ẹ̸̡̊l̶͉̊̀b̶̪̏͐y̷̯͛̋ ̶̡̯̣͆c̷̠̺̞̃̕͝o̴͖͐̐ņ̴̨̺͌t̵̨̘̱́̚͝r̷̡̘͖̂͘ä̶̖́c̶̨͓̅̀t̶̪̒̿',
+  description: '̸͙̘̬͑̾s̸̡̲̔̃̂a̷͕̾̆̕y̷̭̠̓̈ ̸̛̭̎g̶̨̫̝͛̿ò̵͔́ố̶͕̖d̴͉͓̭͛̑̓ḅ̵͌̂ỳ̷̤ȇ̴̱̉ ̷̛͖̲̈̉t̶͚̀͑o̷̙̺̽̀̊ ̴͚̎y̶͕̩͆̾͜o̴͕̒͑u̴͓̔͑̍r̷̩̀͌͋ ̷̳̦̊̐͠s̸͍͕͌o̶̭͑͝u̷̲̇͗̚l̷̛͉̇',
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
-  icons: "/favicon.ico",
+  icons: "/shelbyContract/favicon.ico",
 }
