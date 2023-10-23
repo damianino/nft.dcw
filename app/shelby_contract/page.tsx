@@ -51,11 +51,17 @@ const Page = () => {
         tintRef.current.style.backgroundSize = "cover"
     }, [])
 
-    window.addEventListener("mousemove", reflectionCalculator)
-    window.addEventListener("touchmove", reflectionCalculator)
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.addEventListener("mousemove", reflectionCalculator)
+            window.addEventListener("touchmove", reflectionCalculator)
+        }
+    }, [reflectionCalculator])
 
     useEffect(() => {
-        GetRandomShelbyContractText().then(res => setContractText(res || ""))
+        if (typeof window !== 'undefined') {
+            GetRandomShelbyContractText().then(res => setContractText(res || ""))
+        }
     }, [])
 
     useEffect(() => {
